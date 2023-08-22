@@ -138,6 +138,17 @@
         }
     </style>
     <script>
+        function searchContent() {
+        // Get the search input element
+        var searchInput = document.getElementById("search-input");
+
+        // Get the value of the search input
+        var searchTerm = searchInput.value;
+
+        // Perform the search logic here (e.g., show relevant content)
+        // Replace this line with your actual search logic
+        console.log("Searching for:", searchTerm);
+    }
         function showSection(sectionId) {
             var sections = document.getElementsByClassName("section");
             for (var i = 0; i < sections.length; i++) {
