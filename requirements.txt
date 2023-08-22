@@ -1,3 +1,1 @@
 recommonmark
-from recommonmark.parser import CommonMarkParser
-python -m sphinx -T -E -b html -d _build/doctrees -D language=en . $READTHEDOCS_OUTPUT/html
