@@ -187,12 +187,12 @@ function hideSubSection(subSectionId) {
 const sections = document.querySelectorAll('.subsection');
 
 sections.forEach(subsection => {
-    const title = subsection.querySelector('.subsection-title') || section.querySelector('h3');
+    const title = subsection.querySelector('.subsection-title') || subsection.querySelector('h3');
     
     title.addEventListener('click', () => {
-        subsection.forEach(subsection => {
-            if (subsection !== subsection) {
-                subsection.querySelector('.subsection-content').style.display = 'none';
+        sections.forEach(otherSubsection => {
+            if (otherSubsection !== subsection) {
+                otherSubsection.querySelector('.subsection-content').style.display = 'none';
             }
         });
         
@@ -200,6 +200,7 @@ sections.forEach(subsection => {
         content.style.display = content.style.display === 'none' ? 'block' : 'none';
     });
 });
+
     </script>
 </head>
 <body>
