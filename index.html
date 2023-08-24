@@ -69,7 +69,7 @@
 
         .navigation {
             flex: .5;
-            padding: 20px;
+            padding: 30px;
             background-color: #2b2a2d;
             color: #fff;
         }
@@ -188,18 +188,19 @@ const sections = document.querySelectorAll('.subsection');
 
 sections.forEach(subsection => {
     const title = subsection.querySelector('.subsection-title') || subsection.querySelector('h3');
-    
+    const content = subsection.querySelector('.subsection-content');
+
     title.addEventListener('click', () => {
         sections.forEach(otherSubsection => {
             if (otherSubsection !== subsection) {
                 otherSubsection.querySelector('.subsection-content').style.display = 'none';
             }
         });
-        
-        const content = subsection.querySelector('.subsection-content');
+
         content.style.display = content.style.display === 'none' ? 'block' : 'none';
     });
 });
+
 
     </script>
 </head>
