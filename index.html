@@ -186,17 +186,17 @@ function hideSubSection(subSectionId) {
 
 const sections = document.querySelectorAll('.subsection');
 
-sections.forEach(section => {
-    const title = section.querySelector('.subsection-title') || section.querySelector('h3');
+sections.forEach(subsection => {
+    const title = subsection.querySelector('.subsection-title') || section.querySelector('h3');
     
     title.addEventListener('click', () => {
-        sections.forEach(otherSection => {
-            if (otherSection !== section) {
+        subsection.forEach(otherSection => {
+            if (otherSection !== subsection) {
                 otherSection.querySelector('.subsection-content').style.display = 'none';
             }
         });
         
-        const content = section.querySelector('.subsection-content');
+        const content = subsection.querySelector('.subsection-content');
         content.style.display = content.style.display === 'none' ? 'block' : 'none';
     });
 });
