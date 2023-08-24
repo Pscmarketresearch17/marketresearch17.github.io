@@ -12,16 +12,16 @@
             background-color: #f4f4f4;
         }
         
-        .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 40px;
-    background-image: url('UniBremen_logo2.jpeg');
-    background-size: cover;
-    background-position: center;
-    color: white; /* Adjust text color for visibility */
-}
+            .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 40px;
+        background-image: url('UniBremen_logo2.jpeg');
+        background-size: contain;
+        background-position: center;
+        color: white; /* Adjust text color for visibility */
+    }
         .project-name {
             flex: 1;
             background-color: #231f1f00;
@@ -152,43 +152,39 @@
     </style>
     <script>
         function searchContent() {
-            var searchTerm = document.getElementById("search-input").value.toLowerCase();
-            // Perform your search logic here
-            // In this example, I'm checking if the search term exists in the overview content
-            var overviewContent = document.getElementById("overview").textContent.toLowerCase();
-            
-            if (overviewContent.includes(searchTerm)) {
-                showSection('overview'); // Show the overview section if search term is found
-            } else {
-                console.log("Search term not found in overview");
-            }
-        }
-        function showSection(sectionId) {
-            var sections = document.getElementsByClassName("section");
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = "none";
-            }
-            document.getElementById(sectionId).style.display = "block";
-        }
-        function showSubSection(subSectionId) {
-        var subSection = document.getElementById(subSectionId);
-        if (subSection) {
-            if (subSection.style.display === 'block') {
-                subSection.style.display = 'none';
-            } else {
-                subSection.style.display = 'block';
-            }
-        }
-    }
+    var searchTerm = document.getElementById("search-input").value.toLowerCase();
+    var overviewContent = document.getElementById("overview").textContent.toLowerCase();
     
-
-    function hideSubSection(subSectionId) {
-        var subSection = document.getElementById(subSectionId);
-        if (subSection) {
-            subSection.style.display = 'none';
-        }
+    if (overviewContent.includes(searchTerm)) {
+        showSection('overview');
+    } else {
+        console.log("Search term not found in overview");
     }
-    const sections = document.querySelectorAll('.subsection');
+}
+
+function showSection(sectionId) {
+    var sections = document.getElementsByClassName("section");
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+    document.getElementById(sectionId).style.display = "block";
+}
+
+function showSubSection(subSectionId) {
+    var subSection = document.getElementById(subSectionId);
+    if (subSection) {
+        subSection.style.display = subSection.style.display === 'block' ? 'none' : 'block';
+    }
+}
+
+function hideSubSection(subSectionId) {
+    var subSection = document.getElementById(subSectionId);
+    if (subSection) {
+        subSection.style.display = 'none';
+    }
+}
+
+const sections = document.querySelectorAll('.subsection');
 
 sections.forEach(section => {
     const title = section.querySelector('.subsection-title') || section.querySelector('h3');
