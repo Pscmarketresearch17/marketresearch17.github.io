@@ -190,9 +190,9 @@ sections.forEach(subsection => {
     const title = subsection.querySelector('.subsection-title') || section.querySelector('h3');
     
     title.addEventListener('click', () => {
-        subsection.forEach(otherSection => {
-            if (otherSection !== subsection) {
-                otherSection.querySelector('.subsection-content').style.display = 'none';
+        subsection.forEach(subsection => {
+            if (subsection !== subsection) {
+                subsection.querySelector('.subsection-content').style.display = 'none';
             }
         });
         
