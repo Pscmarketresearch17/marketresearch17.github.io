@@ -188,6 +188,22 @@
             subSection.style.display = 'none';
         }
     }
+    const sections = document.querySelectorAll('.subsection');
+
+sections.forEach(section => {
+    const title = section.querySelector('.subsection-title') || section.querySelector('h3');
+    
+    title.addEventListener('click', () => {
+        sections.forEach(otherSection => {
+            if (otherSection !== section) {
+                otherSection.querySelector('.subsection-content').style.display = 'none';
+            }
+        });
+        
+        const content = section.querySelector('.subsection-content');
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    });
+});
     </script>
 </head>
 <body>
